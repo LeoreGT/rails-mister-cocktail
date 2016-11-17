@@ -1,0 +1,26 @@
+<div class="wrapper" style="background-image: url('<%= image_path 'bkgrnd4.jpg' %>');">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('add-drink.jpg') %>">
+          <h1 class="text-center">
+            <%= @cocktail.name %>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+          <h1 class="text-center">Add your New Cocktail</h1>
+          <%= simple_form_for [@cocktail] do |f| %>
+          <%= f.input :name, placeholder: "Give it a name"%>
+          <div class="text-center">
+            <ul> <%= f.submit "Add Cocktail", class: "btn btn-primary" %></ul>
+            <ul><%= link_to "Back to Cocktails List", cocktails_path %></ul>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

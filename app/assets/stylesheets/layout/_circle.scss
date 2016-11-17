@@ -1,0 +1,27 @@
+// $background: #f3f1c2
+// $border: #eae599
+
+// #circles
+//   position: absolute
+//   top: calc(50% - 25vmin)
+//   left: calc(50% - 25vmin)
+//   width: 50vmin
+//   height: 50vmin
+//   overflow: hidden
+
+// @for $i from 1 through 12
+//   .circle#{$i}
+//     position: absolute
+//     top: 8%
+//     right: 0
+//     width: 84%
+//     height: 84%
+//     background-color: darken(desaturate(adjust-hue($background, $i * -12%), $i * 6%), $i * 6%)
+//     border: 1px solid darken(desaturate(adjust-hue($border, $i * -12%), $i * 6%), $i * 6%)
+//     box-sizing: border-box
+//     border-radius: 50%
+//     animation: rotate 5s linear infinite
+
+// @keyframes rotate
+//   to
+//     transform: rotate(-360deg)

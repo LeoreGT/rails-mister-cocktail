@@ -1,0 +1,48 @@
+<div class="wrapper" style="background-image: url('<%= image_path 'bkgrnd4.jpg' %>');">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+        <div class="card-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path @cocktail.image_url%>')">
+          <h1 class="text-center">
+            <%= @cocktail.name %>
+          </h1>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="container">
+      <div class="row card-dose">
+        <div class="col-xs-6 col-xs-offset-3">
+          <% @cocktail.doses.each do |dose| %>
+          <div class="text-center"><%= dose.ingredient.name %> (<%= dose.description %>)</div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="container">
+      <div class="row card-rose-text">
+        <div class="col-xs-6 col-xs-offset-3">
+          <h3 class="text-center">
+            Add ingredients to this cocktail
+          </h3>
+          <div class="dose-form">
+            <%= simple_form_for [@cocktail, @dose] do |f| %>
+            <%= f.input :ingredient_id, collection: Ingredient.all.order('name ASC'), prompt: "Pick your ingredient"%>
+            <%= f.input :description, placeholder: "5 cl"%>
+            <div class=" text-center">
+              <%= f.submit "Add Ingredient", class: "btn btn-primary" %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row card-rose-text">
+        <div class="col-xs-6 col-xs-offset-3 text-center">
+          <%= link_to "Back to Cocktails List", cocktails_path %> |
+          <%= link_to  "Delete this cocktail", cocktail_path(@cocktail), method: :delete %>
+        </div>
+      </div>
+    </div>
