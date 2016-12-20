@@ -1,6 +1,31 @@
 .card {
   height: 300px;
+  width: 400px;
   background-size: cover !important;
+  margin: 30px;
+  border-radius: 3px;
+  color: white;
+  align-items: center;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
+  flex: 0 0 20%;
+  display: inline-block;
+  align-items: center;
+  .card-delete {
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+  }
+  &:hover {
+    transform: scale(1.1, 1.1);
+    text-decoration: none;
+  }
+}
+
+.card-linked {
+  height: 300px;
   margin: 10px;
   border-radius: 5px;
   color: white;
@@ -8,12 +33,6 @@
   justify-content: space-around;
   align-items: center;
   position: relative;
-  // box-shadow: #AE9EA6 2px 5px 10px;
-  .card-delete {
-    position: absolute;
-    bottom: 15px;
-    left: 10px;
-  }
   &:hover {
     opacity: 0.9;
   }
@@ -21,10 +40,17 @@
 
 .card-info {
   font-weight: bold;
+  text-decoration: none;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
   h2 {
     color: #AE9EA6;
     font-size: 25px;
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Space Mono', monospace;
+  }
+  &:hover {
+    text-decoration: none !important;
   }
 }
 
@@ -36,11 +62,13 @@
   background-size: cover !important;
   margin-bottom: 10px;
   border-radius: 5px;
-  font-family: 'Doppio One', sans-serif;
+  font-family: 'Space Mono', monospace;
+  box-shadow: #AE9EA6 2px 5px 10px;
+  border-color: white;
   h2, h1 {
     color: white;
     flex: 0 1 auto;
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Space Mono', monospace;
   }
 }
 
@@ -49,10 +77,11 @@
 }
 .dose-form {
   font-size: 10px;
-  font-family: 'Doppio One', sans-serif;
+  font-family: 'Space Mono', monospace;
 }
 .card-rose-text {
   color: #AE9EA6;
+  font-family: 'Space Mono', monospace;
 }
 .card-title {
   color: black;
@@ -64,4 +93,71 @@
   right: 0;
   bottom: 0;
   top: 0;
+}
+
+.fa-plus {
+  font-size: 30px;
+}
+
+.welcome {
+  padding-top: 15px;
+  padding-bottom: 30px;
+  color: white;
+  z-index: -1;
+  height: 300px
+}
+
+.card-container {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.purple-background {
+  background-color: #E7E0F3;
+  display: flex;
+}
+
+// .photo-card {
+//   transform: translateX(1);
+//   transition: transform 0.5s ease;
+//   width: 400px;
+//   &:hover {
+//     transform: translateX(2em);
+//   }
+// }
+
+#sidebar {
+  width: 200px;
+  margin-right: 150px;
+  background:#c9c;
+  left: 0;
+}
+
+.button-card {
+  padding-left: 5px;
+  padding-top: 50%;
+  p {
+   color: black;
+ }
+ p:hover {
+  text-decoration: none;
+}
+}
+
+.ingredients-form {
+  width: 200px;
+}
+
+// .add-card {
+//   justify-content: flex-start;
+//   align-self:
+// }
+
+.two-lines {
+  flex-direction: column;
+  align-content: space-around;
+  font-size: 20px;
+  font-size: 25px;
+  font-family: 'Space Mono', monospace;
 }

@@ -1,31 +1,52 @@
-<div class="text-center">
-  <h1 class="text-center">Welcome to Suck That Cocktail</h1>
-  <p class="text-center">See our cocktails below! </p>
-</div>
-<div class="wrapper" style="background-image: url('<%= image_path 'bkgrnd4.jpg' %>');">
-  <div class="container-fluid">
-    <div class="row text-center">
-      <% @cocktails.each do |cocktail|%>
-      <div class="col-xs-12 col-sm-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path cocktail.image_url%>')">
-          <div class="card-info">
-            <h2> <%= link_to cocktail.name, cocktail_path(cocktail), {:style=>'color:lightgray;', :class => "css_class"}%></h2>
+<div class="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <div class="welcome-front">
+          <div class="front-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'jack-daniels.jpg',crop: :fill %>')">
+            <div class="welcome">
+              <h1 class="text-center">Welcome to Mr.Cocktail</h1>
+              <p class="text-center">See our cocktails below! </p>
+            </div>
           </div>
-        </div>
-      </div>
-      <% end %>
-      <div class="col-xs-12 col-sm-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-          <div class="card-linked text-center">
-            <ul>
-              <p>Add a New Cocktail</p>
-            </ul>
-            <ul>
-              <i class='fa fa-plus'></i>
-            </ul>
-          </div>
-          <%= link_to "", new_cocktail_path, class: "card-link" %>
         </div>
       </div>
     </div>
   </div>
+</div>
+<div class="purple-background">
+  <div class="card-container">
+    <div class="container-fluid">
+      <% @cocktails.each do |cocktail|%>
+        <% if cocktail.photo.url %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+            <div class="card-info">
+              <h2>
+                <%= link_to cocktail.name, cocktail_path(cocktail), {:style=>'color:lightgray;', :class => "css_class"}%>
+              </h2>
+            </div>
+            <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
+          </div>
+        <% else %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'add-drink.jpg' %>')">
+            <div class="card-info">
+              <h2>
+                <%= link_to cocktail.name, cocktail_path(cocktail), {:style=>'color:lightgray;', :class => "css_class"}%>
+              </h2>
+            </div>
+            <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="card add-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+        <div class="card-linked two-lines">
+          <i class='fa fa-plus'></i>
+          <p>
+            Add Your Own Cocktail
+          </p>
+        </div>
+        <%= link_to "", new_cocktail_path, class: "card-link" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,11 +1,23 @@
-.wrapper {
-  background-image: cover !important;
-  padding: 10px 10px 10px 10px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+.front-photo {
+  background-image: cover;
+
+}
+.welcome-front {
+  height: 500px;
+  position: absolute;
+  z-index: 1;
+  left: 10px;
+  // border-radius: 10px;
+  // border: rgba(0, 0, 0, 0.7) solid 20px;
 }
 
 .rose-text {
   color: #AE9EA6;
   opacity: 0.9;
+  font-family: 'Space Mono', monospace;
+}
+
+.banner {
+  height: 400px;
+  position: relative;
 }

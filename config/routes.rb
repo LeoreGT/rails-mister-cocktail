@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   end
   resources :ingredients
   resources :doses
-
-  root "cocktails#index"
+  root to: 'cocktails#index'
+  # get 'index', to: "cocktails"
 end
